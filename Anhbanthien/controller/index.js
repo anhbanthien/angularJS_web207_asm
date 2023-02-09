@@ -13,6 +13,12 @@ app.config(function ($routeProvider) {
         .when('/profile', {
             templateUrl: './pages/info.html',
         })
+        .when('/store', {
+            templateUrl: './pages/store.html',
+        })
+        .when('/add', {
+            templateUrl: './pages/add.html',
+        })
         .when('/404', {
             templateUrl: './pages/error.html',
         })
