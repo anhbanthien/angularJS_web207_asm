@@ -13,14 +13,19 @@ app.config(function ($routeProvider) {
         .when('/profile', {
             templateUrl: './pages/info.html',
         })
-        .when('/store', {
-            templateUrl: './pages/store.html',
-        })
         .when('/add', {
             templateUrl: './pages/add.html',
+            controller: StoreController
         })
+        .when('/store', {
+            templateUrl: './pages/store.html',
+            controller: StoreController
+        })
+
         .when('/404', {
             templateUrl: './pages/error.html',
+
+
         })
         .otherwise({
             redirectTo: '/404'
