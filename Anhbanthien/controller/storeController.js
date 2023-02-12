@@ -12,26 +12,34 @@ var StoreController = function ($scope) {
     $scope.input =
     {
 
-        //     name: "AngularJS", address: "VietNam", 
-        //  logo: "https://w7.pngwing.com/pngs/752/651/png-transparent-angularjs-vue-js-others-angle-rectangle-triangle-thumbnail.png",
-        //   numberphone: "0345777890", status: 1
+        name: "Express", address: "VietNam",
+        logo: "https://1.bp.blogspot.com/-jkSmywQ57sA/Wer3KKSqgaI/AAAAAAAACc4/07TexMsBBI4v7WlVKo76YvxM3TvrMxIdwCLcBGAs/s640/express.js.png",
+        numberphone: "0345777890", status: 0
 
     }
+
+
 
     $scope.setShowForm = function (status) {
         $scope.isShowForm = status;
         $scope.isShowForm2 = false;
+        $scope.Hide = !$scope.Hide
+
+
+
     }
     $scope.setShowForm2 = function (status, l) {
         $scope.isShowForm2 = status;
         $scope.isShowForm = false;
         $scope.input = l;
         check = l;
+        $scope.Hide = !$scope.Hide
+
 
     }
     $scope.onSave = () => {
 
-        $scope.input = "";
+
         var l = $scope.listCourses
         var newId = l.length > 0
             ? l[l.length - 1].id + 1
@@ -41,10 +49,12 @@ var StoreController = function ($scope) {
             ...$scope.input
         }
         $scope.listCourses.push(newItem)
-        alert("Thêm thành công !")
         $scope.isShowForm = false;
 
         console.log($scope.listCourses)
+
+        $scope.Hide = !$scope.Hide
+
 
 
     }
@@ -57,6 +67,8 @@ var StoreController = function ($scope) {
             }
         }
         $scope.isShowForm2 = false;
+        $scope.Hide = !$scope.Hide
+
 
     }
     $scope.onDelete = function (deleteId) {
